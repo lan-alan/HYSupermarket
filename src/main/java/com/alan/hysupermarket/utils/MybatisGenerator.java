@@ -20,7 +20,7 @@ public class MybatisGenerator {
 
     public static void main(String[] args) throws Exception {
         // 设置为今天的日期 2018-2-3 预防下次启动的时候会覆盖掉之前写好的配置
-        String today = "";
+        String today = "2018-2-4";
 
         // 设置时间格式
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -48,7 +48,7 @@ public class MybatisGenerator {
         //
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);
-        System.out.println("生成代码成功，只能执行一次，以后执行会覆盖掉mapper,pojo,xml 等文件上做的修改");
+        System.out.println("生成代码成功，只能执行一次，以后执行会覆盖掉mapper,pojo,xml 等文件上做的修改。");
     }
 
 }

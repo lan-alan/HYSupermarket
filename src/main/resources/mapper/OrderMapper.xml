@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alan.hysupermarket.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.alan.hysupermarket.pojo.Order">
+    <id column="ID" jdbcType="DECIMAL" property="ID" />
+    <result column="ORDERCODE" jdbcType="VARCHAR" property="ORDERCODE" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="ADDRESS" />
+    <result column="POST" jdbcType="VARCHAR" property="POST" />
+    <result column="RECEIVER" jdbcType="VARCHAR" property="RECEIVER" />
+    <result column="MOBILE" jdbcType="VARCHAR" property="MOBILE" />
+    <result column="USERMESSAGE" jdbcType="VARCHAR" property="USERMESSAGE" />
+    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="CREATEDATE" />
+    <result column="PAYDATE" jdbcType="TIMESTAMP" property="PAYDATE" />
+    <result column="DELIVERYDATE" jdbcType="TIMESTAMP" property="DELIVERYDATE" />
+    <result column="CONFIRMDATE" jdbcType="TIMESTAMP" property="CONFIRMDATE" />
+    <result column="U_ID" jdbcType="DECIMAL" property="u_ID" />
+    <result column="STATUS" jdbcType="VARCHAR" property="STATUS" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, ORDERCODE, ADDRESS, POST, RECEIVER, MOBILE, USERMESSAGE, CREATEDATE, PAYDATE, 
+    DELIVERYDATE, CONFIRMDATE, U_ID, STATUS
+  </sql>
+  <select id="selectByExample" parameterType="com.alan.hysupermarket.pojo.OrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from HY_ORDER_
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from HY_ORDER_
+    where ID = #{ID,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from HY_ORDER_
+    where ID = #{ID,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Order" useGeneratedKeys="true">
+    insert into HY_ORDER_ (ORDERCODE, ADDRESS, POST, 
+      RECEIVER, MOBILE, USERMESSAGE, 
+      CREATEDATE, PAYDATE, DELIVERYDATE, 
+      CONFIRMDATE, U_ID, STATUS
+      )
+    values (#{ORDERCODE,jdbcType=VARCHAR}, #{ADDRESS,jdbcType=VARCHAR}, #{POST,jdbcType=VARCHAR}, 
+      #{RECEIVER,jdbcType=VARCHAR}, #{MOBILE,jdbcType=VARCHAR}, #{USERMESSAGE,jdbcType=VARCHAR}, 
+      #{CREATEDATE,jdbcType=TIMESTAMP}, #{PAYDATE,jdbcType=TIMESTAMP}, #{DELIVERYDATE,jdbcType=TIMESTAMP}, 
+      #{CONFIRMDATE,jdbcType=TIMESTAMP}, #{u_ID,jdbcType=DECIMAL}, #{STATUS,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Order" useGeneratedKeys="true">
+    insert into HY_ORDER_
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ORDERCODE != null">
+        ORDERCODE,
+      </if>
+      <if test="ADDRESS != null">
+        ADDRESS,
+      </if>
+      <if test="POST != null">
+        POST,
+      </if>
+      <if test="RECEIVER != null">
+        RECEIVER,
+      </if>
+      <if test="MOBILE != null">
+        MOBILE,
+      </if>
+      <if test="USERMESSAGE != null">
+        USERMESSAGE,
+      </if>
+      <if test="CREATEDATE != null">
+        CREATEDATE,
+      </if>
+      <if test="PAYDATE != null">
+        PAYDATE,
+      </if>
+      <if test="DELIVERYDATE != null">
+        DELIVERYDATE,
+      </if>
+      <if test="CONFIRMDATE != null">
+        CONFIRMDATE,
+      </if>
+      <if test="u_ID != null">
+        U_ID,
+      </if>
+      <if test="STATUS != null">
+        STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ORDERCODE != null">
+        #{ORDERCODE,jdbcType=VARCHAR},
+      </if>
+      <if test="ADDRESS != null">
+        #{ADDRESS,jdbcType=VARCHAR},
+      </if>
+      <if test="POST != null">
+        #{POST,jdbcType=VARCHAR},
+      </if>
+      <if test="RECEIVER != null">
+        #{RECEIVER,jdbcType=VARCHAR},
+      </if>
+      <if test="MOBILE != null">
+        #{MOBILE,jdbcType=VARCHAR},
+      </if>
+      <if test="USERMESSAGE != null">
+        #{USERMESSAGE,jdbcType=VARCHAR},
+      </if>
+      <if test="CREATEDATE != null">
+        #{CREATEDATE,jdbcType=TIMESTAMP},
+      </if>
+      <if test="PAYDATE != null">
+        #{PAYDATE,jdbcType=TIMESTAMP},
+      </if>
+      <if test="DELIVERYDATE != null">
+        #{DELIVERYDATE,jdbcType=TIMESTAMP},
+      </if>
+      <if test="CONFIRMDATE != null">
+        #{CONFIRMDATE,jdbcType=TIMESTAMP},
+      </if>
+      <if test="u_ID != null">
+        #{u_ID,jdbcType=DECIMAL},
+      </if>
+      <if test="STATUS != null">
+        #{STATUS,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.Order">
+    update HY_ORDER_
+    <set>
+      <if test="ORDERCODE != null">
+        ORDERCODE = #{ORDERCODE,jdbcType=VARCHAR},
+      </if>
+      <if test="ADDRESS != null">
+        ADDRESS = #{ADDRESS,jdbcType=VARCHAR},
+      </if>
+      <if test="POST != null">
+        POST = #{POST,jdbcType=VARCHAR},
+      </if>
+      <if test="RECEIVER != null">
+        RECEIVER = #{RECEIVER,jdbcType=VARCHAR},
+      </if>
+      <if test="MOBILE != null">
+        MOBILE = #{MOBILE,jdbcType=VARCHAR},
+      </if>
+      <if test="USERMESSAGE != null">
+        USERMESSAGE = #{USERMESSAGE,jdbcType=VARCHAR},
+      </if>
+      <if test="CREATEDATE != null">
+        CREATEDATE = #{CREATEDATE,jdbcType=TIMESTAMP},
+      </if>
+      <if test="PAYDATE != null">
+        PAYDATE = #{PAYDATE,jdbcType=TIMESTAMP},
+      </if>
+      <if test="DELIVERYDATE != null">
+        DELIVERYDATE = #{DELIVERYDATE,jdbcType=TIMESTAMP},
+      </if>
+      <if test="CONFIRMDATE != null">
+        CONFIRMDATE = #{CONFIRMDATE,jdbcType=TIMESTAMP},
+      </if>
+      <if test="u_ID != null">
+        U_ID = #{u_ID,jdbcType=DECIMAL},
+      </if>
+      <if test="STATUS != null">
+        STATUS = #{STATUS,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{ID,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.Order">
+    update HY_ORDER_
+    set ORDERCODE = #{ORDERCODE,jdbcType=VARCHAR},
+      ADDRESS = #{ADDRESS,jdbcType=VARCHAR},
+      POST = #{POST,jdbcType=VARCHAR},
+      RECEIVER = #{RECEIVER,jdbcType=VARCHAR},
+      MOBILE = #{MOBILE,jdbcType=VARCHAR},
+      USERMESSAGE = #{USERMESSAGE,jdbcType=VARCHAR},
+      CREATEDATE = #{CREATEDATE,jdbcType=TIMESTAMP},
+      PAYDATE = #{PAYDATE,jdbcType=TIMESTAMP},
+      DELIVERYDATE = #{DELIVERYDATE,jdbcType=TIMESTAMP},
+      CONFIRMDATE = #{CONFIRMDATE,jdbcType=TIMESTAMP},
+      U_ID = #{u_ID,jdbcType=DECIMAL},
+      STATUS = #{STATUS,jdbcType=VARCHAR}
+    where ID = #{ID,jdbcType=DECIMAL}
+  </update>
+</mapper>

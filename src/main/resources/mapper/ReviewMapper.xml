@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alan.hysupermarket.mapper.ReviewMapper">
+  <resultMap id="BaseResultMap" type="com.alan.hysupermarket.pojo.Review">
+    <id column="ID" jdbcType="DECIMAL" property="ID" />
+    <result column="CONTENT" jdbcType="VARCHAR" property="CONTENT" />
+    <result column="U_ID" jdbcType="DECIMAL" property="u_ID" />
+    <result column="PID" jdbcType="DECIMAL" property="PID" />
+    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="CREATEDATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, CONTENT, U_ID, PID, CREATEDATE
+  </sql>
+  <select id="selectByExample" parameterType="com.alan.hysupermarket.pojo.ReviewExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from HY_REVIEW
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from HY_REVIEW
+    where ID = #{ID,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from HY_REVIEW
+    where ID = #{ID,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Review" useGeneratedKeys="true">
+    insert into HY_REVIEW (CONTENT, U_ID, PID, 
+      CREATEDATE)
+    values (#{CONTENT,jdbcType=VARCHAR}, #{u_ID,jdbcType=DECIMAL}, #{PID,jdbcType=DECIMAL}, 
+      #{CREATEDATE,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Review" useGeneratedKeys="true">
+    insert into HY_REVIEW
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="CONTENT != null">
+        CONTENT,
+      </if>
+      <if test="u_ID != null">
+        U_ID,
+      </if>
+      <if test="PID != null">
+        PID,
+      </if>
+      <if test="CREATEDATE != null">
+        CREATEDATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="CONTENT != null">
+        #{CONTENT,jdbcType=VARCHAR},
+      </if>
+      <if test="u_ID != null">
+        #{u_ID,jdbcType=DECIMAL},
+      </if>
+      <if test="PID != null">
+        #{PID,jdbcType=DECIMAL},
+      </if>
+      <if test="CREATEDATE != null">
+        #{CREATEDATE,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.Review">
+    update HY_REVIEW
+    <set>
+      <if test="CONTENT != null">
+        CONTENT = #{CONTENT,jdbcType=VARCHAR},
+      </if>
+      <if test="u_ID != null">
+        U_ID = #{u_ID,jdbcType=DECIMAL},
+      </if>
+      <if test="PID != null">
+        PID = #{PID,jdbcType=DECIMAL},
+      </if>
+      <if test="CREATEDATE != null">
+        CREATEDATE = #{CREATEDATE,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{ID,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.Review">
+    update HY_REVIEW
+    set CONTENT = #{CONTENT,jdbcType=VARCHAR},
+      U_ID = #{u_ID,jdbcType=DECIMAL},
+      PID = #{PID,jdbcType=DECIMAL},
+      CREATEDATE = #{CREATEDATE,jdbcType=TIMESTAMP}
+    where ID = #{ID,jdbcType=DECIMAL}
+  </update>
+</mapper>
