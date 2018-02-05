@@ -4,7 +4,7 @@ import com.alan.hysupermarket.pojo.Property;
 import com.alan.hysupermarket.pojo.PropertyExample;
 import java.util.List;
 
-public interface PropertyMapper {
+public interface IPropertyMapper {
     int deleteByPrimaryKey(Long ID);
 
     int insert(Property record);

@@ -4,7 +4,7 @@ import com.alan.hysupermarket.pojo.OrderItem;
 import com.alan.hysupermarket.pojo.OrderItemExample;
 import java.util.List;
 
-public interface OrderItemMapper {
+public interface IOrderItemMapper {
     int deleteByPrimaryKey(Long ID);
 
     int insert(OrderItem record);

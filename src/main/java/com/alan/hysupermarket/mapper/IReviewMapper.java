@@ -4,7 +4,7 @@ import com.alan.hysupermarket.pojo.Review;
 import com.alan.hysupermarket.pojo.ReviewExample;
 import java.util.List;
 
-public interface ReviewMapper {
+public interface IReviewMapper {
     int deleteByPrimaryKey(Long ID);
 
     int insert(Review record);

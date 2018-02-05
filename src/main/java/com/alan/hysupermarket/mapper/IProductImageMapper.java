@@ -4,7 +4,7 @@ import com.alan.hysupermarket.pojo.ProductImage;
 import com.alan.hysupermarket.pojo.ProductImageExample;
 import java.util.List;
 
-public interface ProductImageMapper {
+public interface IProductImageMapper {
     int deleteByPrimaryKey(Long ID);
 
     int insert(ProductImage record);

@@ -4,7 +4,7 @@ import com.alan.hysupermarket.pojo.Category;
 import com.alan.hysupermarket.pojo.CategoryExample;
 import java.util.List;
 
-public interface CategoryMapper {
+public interface ICategoryMapper {
     int deleteByPrimaryKey(Long ID);
 
     int insert(Category record);

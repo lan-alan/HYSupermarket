@@ -4,7 +4,7 @@ import com.alan.hysupermarket.pojo.User;
 import com.alan.hysupermarket.pojo.UserExample;
 import java.util.List;
 
-public interface UserMapper {
+public interface IUserMapper {
     int deleteByPrimaryKey(Long ID);
 
     int insert(User record);
