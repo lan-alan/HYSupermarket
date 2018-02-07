@@ -8,9 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="00a2639b-fe14-47cd-a620-90f15f29ff2c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/mapper/IUserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/mapper/IUserMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IUserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IUserService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/UserServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/Property.java" afterPath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/Property.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/Review.java" afterPath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/Review.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IReviewService.java" afterPath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IReviewService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/ReviewServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/ReviewServiceImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="IUserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IUserService.java">
+      <file leaf-file-name="IReviewService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IReviewService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="180">
+              <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,20 +36,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IUserMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/mapper/IUserMapper.java">
+      <file leaf-file-name="ReviewServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/ReviewServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="7">
+              <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#701#702#0" expanded="true" />
+                <element signature="e#744#745#0" expanded="true" />
+                <element signature="e#793#794#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+                <element signature="e#899#900#0" expanded="true" />
+                <element signature="e#963#964#0" expanded="true" />
+                <element signature="e#1011#1012#0" expanded="true" />
+                <element signature="e#1069#1070#0" expanded="true" />
+                <element signature="e#1729#1730#0" expanded="true" />
+                <element signature="e#1768#1769#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Review.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/Review.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+              <folding>
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#342#343#0" expanded="true" />
+                <element signature="e#374#375#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="390">
               <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -124,6 +151,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/mapper/IUserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IReviewService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/Review.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/ReviewServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -149,8 +179,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="745" />
-    <option name="y" value="97" />
+    <option name="x" value="950" />
+    <option name="y" value="111" />
     <option name="width" value="1924" />
     <option name="height" value="923" />
   </component>
@@ -214,15 +244,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hysupermarket" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HYSupermarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HYSupermarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hysupermarket" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HYSupermarket" type="b2602c69:ProjectViewProjectNode" />
@@ -597,15 +618,15 @@
       <workItem from="1517752415452" duration="2841000" />
       <workItem from="1517832806642" duration="8650000" />
       <workItem from="1517929811304" duration="2117000" />
-      <workItem from="1518007143640" duration="1555000" />
+      <workItem from="1518007143640" duration="3800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33286000" />
+    <option name="totallyTimeSpent" value="35531000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="745" y="97" width="1924" height="923" extended-state="0" />
+    <frame x="950" y="111" width="1924" height="923" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -623,8 +644,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08324324" sideWeight="0.76071924" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08324324" sideWeight="0.23928078" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.112432435" sideWeight="0.76071924" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.112432435" sideWeight="0.23928078" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -652,13 +673,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/utils/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/CategoryExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -757,14 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/mapper/IReviewMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/mapper/IPropertyMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -785,6 +791,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -792,6 +799,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -982,22 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IReviewService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/ReviewServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/UserExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1950">
@@ -1024,9 +1016,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/mapper/IReviewMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/IReviewService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/pojo/Review.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="390">
           <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1038,6 +1060,26 @@
             <element signature="e#973#974#0" expanded="true" />
             <element signature="e#1090#1091#0" expanded="true" />
             <element signature="e#1146#1147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/hysupermarket/service/impl/ReviewServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#1729#1730#0" expanded="true" />
+            <element signature="e#1768#1769#0" expanded="true" />
           </folding>
         </state>
       </provider>
