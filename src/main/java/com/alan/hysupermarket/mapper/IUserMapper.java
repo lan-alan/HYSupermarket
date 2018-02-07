@@ -2,6 +2,7 @@ package com.alan.hysupermarket.mapper;
 
 import com.alan.hysupermarket.pojo.User;
 import com.alan.hysupermarket.pojo.UserExample;
+
 import java.util.List;
 
 public interface IUserMapper {
