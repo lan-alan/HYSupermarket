@@ -11,6 +11,17 @@ public class OrderItem {
 
     private Long QUANTITY;
 
+    /*非数据库字段*/
+    private Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     public Long getID() {
         return ID;
     }

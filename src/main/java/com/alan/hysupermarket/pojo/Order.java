@@ -1,6 +1,7 @@
 package com.alan.hysupermarket.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Order {
     private Long ID;
@@ -28,6 +29,47 @@ public class Order {
     private Long u_ID;
 
     private String STATUS;
+
+    /*如下是非数据库字段*/
+    private List<OrderItem> orderItems;
+
+    private User user;
+
+    private float total;
+
+    private int totalNumber;
+
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
+
+    public int getTotalNumber() {
+        return totalNumber;
+    }
+
+    public void setTotalNumber(int totalNumber) {
+        this.totalNumber = totalNumber;
+    }
 
     public Long getID() {
         return ID;
