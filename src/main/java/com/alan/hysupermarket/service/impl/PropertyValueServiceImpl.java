@@ -1,6 +1,6 @@
 package com.alan.hysupermarket.service.impl;
 
-import com.alan.hysupermarket.mapper.IPropertyValueMapper;
+import com.alan.hysupermarket.mapper.PropertyValueMapper;
 import com.alan.hysupermarket.pojo.Product;
 import com.alan.hysupermarket.pojo.Property;
 import com.alan.hysupermarket.pojo.PropertyValue;
@@ -16,7 +16,7 @@ import java.util.List;
 public class PropertyValueServiceImpl implements IPropertyValueService {
 
     @Autowired
-    private IPropertyValueMapper propertyValueMapper;
+    private PropertyValueMapper propertyValueMapper;
 
     @Autowired
     private IPropertyService propertyService;

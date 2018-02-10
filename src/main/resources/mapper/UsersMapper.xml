@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.alan.hysupermarket.mapper.ReviewMapper">
-  <resultMap id="BaseResultMap" type="com.alan.hysupermarket.pojo.Review">
+<mapper namespace="com.alan.hysupermarket.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.alan.hysupermarket.pojo.Users">
     <id column="ID" jdbcType="DECIMAL" property="ID" />
-    <result column="CONTENT" jdbcType="VARCHAR" property="CONTENT" />
-    <result column="UUID" jdbcType="DECIMAL" property="UUID" />
-    <result column="PID" jdbcType="DECIMAL" property="PID" />
-    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="CREATEDATE" />
+    <result column="NAME" jdbcType="VARCHAR" property="NAME" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="PASSWORD" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -38,16 +36,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, CONTENT, UUID, PID, CREATEDATE
+    ID, NAME, PASSWORD
   </sql>
-  <select id="selectByExample" parameterType="com.alan.hysupermarket.pojo.ReviewExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.alan.hysupermarket.pojo.UsersExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from REVIEW
+    from USERS
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -58,74 +56,52 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from REVIEW
+    from USERS
     where ID = #{ID,jdbcType=DECIMAL}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from REVIEW
+    delete from USERS
     where ID = #{ID,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Review" useGeneratedKeys="true">
-    insert into REVIEW (CONTENT, UUID, PID, 
-      CREATEDATE)
-    values (#{CONTENT,jdbcType=VARCHAR}, #{UUID,jdbcType=DECIMAL}, #{PID,jdbcType=DECIMAL}, 
-      #{CREATEDATE,jdbcType=TIMESTAMP})
+  <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Users" useGeneratedKeys="true">
+    insert into USERS (NAME, PASSWORD)
+    values (#{NAME,jdbcType=VARCHAR}, #{PASSWORD,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Review" useGeneratedKeys="true">
-    insert into REVIEW
+  <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Users" useGeneratedKeys="true">
+    insert into USERS
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="CONTENT != null">
-        CONTENT,
+      <if test="NAME != null">
+        NAME,
       </if>
-      <if test="UUID != null">
-        UUID,
-      </if>
-      <if test="PID != null">
-        PID,
-      </if>
-      <if test="CREATEDATE != null">
-        CREATEDATE,
+      <if test="PASSWORD != null">
+        PASSWORD,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="CONTENT != null">
-        #{CONTENT,jdbcType=VARCHAR},
+      <if test="NAME != null">
+        #{NAME,jdbcType=VARCHAR},
       </if>
-      <if test="UUID != null">
-        #{UUID,jdbcType=DECIMAL},
-      </if>
-      <if test="PID != null">
-        #{PID,jdbcType=DECIMAL},
-      </if>
-      <if test="CREATEDATE != null">
-        #{CREATEDATE,jdbcType=TIMESTAMP},
+      <if test="PASSWORD != null">
+        #{PASSWORD,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.Review">
-    update REVIEW
+  <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.Users">
+    update USERS
     <set>
-      <if test="CONTENT != null">
-        CONTENT = #{CONTENT,jdbcType=VARCHAR},
+      <if test="NAME != null">
+        NAME = #{NAME,jdbcType=VARCHAR},
       </if>
-      <if test="UUID != null">
-        UUID = #{UUID,jdbcType=DECIMAL},
-      </if>
-      <if test="PID != null">
-        PID = #{PID,jdbcType=DECIMAL},
-      </if>
-      <if test="CREATEDATE != null">
-        CREATEDATE = #{CREATEDATE,jdbcType=TIMESTAMP},
+      <if test="PASSWORD != null">
+        PASSWORD = #{PASSWORD,jdbcType=VARCHAR},
       </if>
     </set>
     where ID = #{ID,jdbcType=DECIMAL}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.Review">
-    update REVIEW
-    set CONTENT = #{CONTENT,jdbcType=VARCHAR},
-      UUID = #{UUID,jdbcType=DECIMAL},
-      PID = #{PID,jdbcType=DECIMAL},
-      CREATEDATE = #{CREATEDATE,jdbcType=TIMESTAMP}
+  <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.Users">
+    update USERS
+    set NAME = #{NAME,jdbcType=VARCHAR},
+      PASSWORD = #{PASSWORD,jdbcType=VARCHAR}
     where ID = #{ID,jdbcType=DECIMAL}
   </update>
 </mapper>

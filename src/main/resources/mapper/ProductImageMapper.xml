@@ -45,7 +45,7 @@
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from HY_PRODUCTIMAGE
+    from PRODUCTIMAGE
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -56,19 +56,19 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from HY_PRODUCTIMAGE
+    from PRODUCTIMAGE
     where ID = #{ID,jdbcType=DECIMAL}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from HY_PRODUCTIMAGE
+    delete from PRODUCTIMAGE
     where ID = #{ID,jdbcType=DECIMAL}
   </delete>
   <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.ProductImage" useGeneratedKeys="true">
-    insert into HY_PRODUCTIMAGE (PID, TYPE)
+    insert into PRODUCTIMAGE (PID, TYPE)
     values (#{PID,jdbcType=DECIMAL}, #{TYPE,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.ProductImage" useGeneratedKeys="true">
-    insert into HY_PRODUCTIMAGE
+    insert into PRODUCTIMAGE
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="PID != null">
         PID,
@@ -87,7 +87,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.ProductImage">
-    update HY_PRODUCTIMAGE
+    update PRODUCTIMAGE
     <set>
       <if test="PID != null">
         PID = #{PID,jdbcType=DECIMAL},
@@ -99,7 +99,7 @@
     where ID = #{ID,jdbcType=DECIMAL}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.ProductImage">
-    update HY_PRODUCTIMAGE
+    update PRODUCTIMAGE
     set PID = #{PID,jdbcType=DECIMAL},
       TYPE = #{TYPE,jdbcType=VARCHAR}
     where ID = #{ID,jdbcType=DECIMAL}

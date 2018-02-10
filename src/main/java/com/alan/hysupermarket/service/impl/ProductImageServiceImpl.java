@@ -1,6 +1,6 @@
 package com.alan.hysupermarket.service.impl;
 
-import com.alan.hysupermarket.mapper.IProductImageMapper;
+import com.alan.hysupermarket.mapper.ProductImageMapper;
 import com.alan.hysupermarket.pojo.ProductImage;
 import com.alan.hysupermarket.pojo.ProductImageExample;
 import com.alan.hysupermarket.service.IProductImageService;
@@ -13,7 +13,7 @@ import java.util.List;
 public class ProductImageServiceImpl implements IProductImageService {
 
     @Autowired
-    private IProductImageMapper productImageMapper;
+    private ProductImageMapper productImageMapper;
 
     @Override
     public void add(ProductImage productImage) {

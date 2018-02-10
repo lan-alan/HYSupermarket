@@ -1,6 +1,6 @@
 package com.alan.hysupermarket.service.impl;
 
-import com.alan.hysupermarket.mapper.IProductMapper;
+import com.alan.hysupermarket.mapper.ProductMapper;
 import com.alan.hysupermarket.pojo.Category;
 import com.alan.hysupermarket.pojo.Product;
 import com.alan.hysupermarket.pojo.ProductExample;
@@ -16,7 +16,7 @@ import java.util.List;
 public class ProductServiceImpl implements IProductService {
 
     @Autowired
-    private IProductMapper productMapper;
+    private ProductMapper productMapper;
 
     @Autowired
     private ICategoryService categoryService;
@@ -25,7 +25,7 @@ public class ProductServiceImpl implements IProductService {
     private IProductImageService productImageService;
 
     @Autowired
-    private IOrderItemService orderItemService;
+    private IOrdersItemService ordersItemService;
 
     @Autowired
     private IReviewService reviewService;
@@ -115,7 +115,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void setSaleAndReviewNumber(Product product) {
-        int saleCount = orderItemService.getSaleCount(product.getID());
+        int saleCount = ordersItemService.getSaleCount(product.getID());
         product.setSaleCount(saleCount);
 
         int reviewCount = reviewService.getCount(product.getID());

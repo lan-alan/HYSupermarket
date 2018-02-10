@@ -7,21 +7,21 @@ public class Review {
 
     private String CONTENT;
 
-    private Long u_ID;
+    private Long UUID;
 
     private Long PID;
 
     private Date CREATEDATE;
 
     /*非数据库字段*/
-    private User user;
+    private Users users;
 
-    public User getUser() {
-        return user;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
     public Long getID() {
@@ -40,12 +40,12 @@ public class Review {
         this.CONTENT = CONTENT == null ? null : CONTENT.trim();
     }
 
-    public Long getU_ID() {
-        return u_ID;
+    public Long getUUID() {
+        return UUID;
     }
 
-    public void setU_ID(Long u_ID) {
-        this.u_ID = u_ID;
+    public void setUUID(Long UUID) {
+        this.UUID = UUID;
     }
 
     public Long getPID() {

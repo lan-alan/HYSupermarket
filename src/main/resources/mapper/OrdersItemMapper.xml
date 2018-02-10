@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.alan.hysupermarket.mapper.ReviewMapper">
-  <resultMap id="BaseResultMap" type="com.alan.hysupermarket.pojo.Review">
+<mapper namespace="com.alan.hysupermarket.mapper.OrdersItemMapper">
+  <resultMap id="BaseResultMap" type="com.alan.hysupermarket.pojo.OrdersItem">
     <id column="ID" jdbcType="DECIMAL" property="ID" />
-    <result column="CONTENT" jdbcType="VARCHAR" property="CONTENT" />
-    <result column="UUID" jdbcType="DECIMAL" property="UUID" />
     <result column="PID" jdbcType="DECIMAL" property="PID" />
-    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="CREATEDATE" />
+    <result column="OID" jdbcType="DECIMAL" property="OID" />
+    <result column="UUID" jdbcType="DECIMAL" property="UUID" />
+    <result column="QUANTITY" jdbcType="DECIMAL" property="QUANTITY" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -38,16 +38,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, CONTENT, UUID, PID, CREATEDATE
+    ID, PID, OID, UUID, QUANTITY
   </sql>
-  <select id="selectByExample" parameterType="com.alan.hysupermarket.pojo.ReviewExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.alan.hysupermarket.pojo.OrdersItemExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from REVIEW
+    from ORDERSITEM
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -58,74 +58,74 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from REVIEW
+    from ORDERSITEM
     where ID = #{ID,jdbcType=DECIMAL}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from REVIEW
+    delete from ORDERSITEM
     where ID = #{ID,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Review" useGeneratedKeys="true">
-    insert into REVIEW (CONTENT, UUID, PID, 
-      CREATEDATE)
-    values (#{CONTENT,jdbcType=VARCHAR}, #{UUID,jdbcType=DECIMAL}, #{PID,jdbcType=DECIMAL}, 
-      #{CREATEDATE,jdbcType=TIMESTAMP})
+  <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.OrdersItem" useGeneratedKeys="true">
+    insert into ORDERSITEM (PID, OID, UUID, 
+      QUANTITY)
+    values (#{PID,jdbcType=DECIMAL}, #{OID,jdbcType=DECIMAL}, #{UUID,jdbcType=DECIMAL}, 
+      #{QUANTITY,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Review" useGeneratedKeys="true">
-    insert into REVIEW
+  <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.OrdersItem" useGeneratedKeys="true">
+    insert into ORDERSITEM
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="CONTENT != null">
-        CONTENT,
+      <if test="PID != null">
+        PID,
+      </if>
+      <if test="OID != null">
+        OID,
       </if>
       <if test="UUID != null">
         UUID,
       </if>
-      <if test="PID != null">
-        PID,
-      </if>
-      <if test="CREATEDATE != null">
-        CREATEDATE,
+      <if test="QUANTITY != null">
+        QUANTITY,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="CONTENT != null">
-        #{CONTENT,jdbcType=VARCHAR},
+      <if test="PID != null">
+        #{PID,jdbcType=DECIMAL},
+      </if>
+      <if test="OID != null">
+        #{OID,jdbcType=DECIMAL},
       </if>
       <if test="UUID != null">
         #{UUID,jdbcType=DECIMAL},
       </if>
-      <if test="PID != null">
-        #{PID,jdbcType=DECIMAL},
-      </if>
-      <if test="CREATEDATE != null">
-        #{CREATEDATE,jdbcType=TIMESTAMP},
+      <if test="QUANTITY != null">
+        #{QUANTITY,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.Review">
-    update REVIEW
+  <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.OrdersItem">
+    update ORDERSITEM
     <set>
-      <if test="CONTENT != null">
-        CONTENT = #{CONTENT,jdbcType=VARCHAR},
+      <if test="PID != null">
+        PID = #{PID,jdbcType=DECIMAL},
+      </if>
+      <if test="OID != null">
+        OID = #{OID,jdbcType=DECIMAL},
       </if>
       <if test="UUID != null">
         UUID = #{UUID,jdbcType=DECIMAL},
       </if>
-      <if test="PID != null">
-        PID = #{PID,jdbcType=DECIMAL},
-      </if>
-      <if test="CREATEDATE != null">
-        CREATEDATE = #{CREATEDATE,jdbcType=TIMESTAMP},
+      <if test="QUANTITY != null">
+        QUANTITY = #{QUANTITY,jdbcType=DECIMAL},
       </if>
     </set>
     where ID = #{ID,jdbcType=DECIMAL}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.Review">
-    update REVIEW
-    set CONTENT = #{CONTENT,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.OrdersItem">
+    update ORDERSITEM
+    set PID = #{PID,jdbcType=DECIMAL},
+      OID = #{OID,jdbcType=DECIMAL},
       UUID = #{UUID,jdbcType=DECIMAL},
-      PID = #{PID,jdbcType=DECIMAL},
-      CREATEDATE = #{CREATEDATE,jdbcType=TIMESTAMP}
+      QUANTITY = #{QUANTITY,jdbcType=DECIMAL}
     where ID = #{ID,jdbcType=DECIMAL}
   </update>
 </mapper>

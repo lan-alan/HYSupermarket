@@ -44,7 +44,7 @@
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from HY_CATEGORY
+    from CATEGORY
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -55,19 +55,19 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from HY_CATEGORY
+    from CATEGORY
     where ID = #{ID,jdbcType=DECIMAL}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from HY_CATEGORY
+    delete from CATEGORY
     where ID = #{ID,jdbcType=DECIMAL}
   </delete>
   <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Category" useGeneratedKeys="true">
-    insert into HY_CATEGORY (NAME)
+    insert into CATEGORY (NAME)
     values (#{NAME,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Category" useGeneratedKeys="true">
-    insert into HY_CATEGORY
+    insert into CATEGORY
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="NAME != null">
         NAME,
@@ -80,7 +80,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.Category">
-    update HY_CATEGORY
+    update CATEGORY
     <set>
       <if test="NAME != null">
         NAME = #{NAME,jdbcType=VARCHAR},
@@ -89,7 +89,7 @@
     where ID = #{ID,jdbcType=DECIMAL}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.Category">
-    update HY_CATEGORY
+    update CATEGORY
     set NAME = #{NAME,jdbcType=VARCHAR}
     where ID = #{ID,jdbcType=DECIMAL}
   </update>

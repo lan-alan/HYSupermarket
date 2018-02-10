@@ -1,6 +1,6 @@
 package com.alan.hysupermarket.service.impl;
 
-import com.alan.hysupermarket.mapper.IPropertyMapper;
+import com.alan.hysupermarket.mapper.PropertyMapper;
 import com.alan.hysupermarket.pojo.Property;
 import com.alan.hysupermarket.pojo.PropertyExample;
 import com.alan.hysupermarket.service.IPropertyService;
@@ -13,7 +13,7 @@ import java.util.List;
 public class PropertyServiceImpl implements IPropertyService {
 
     @Autowired
-    private IPropertyMapper propertyMapper;
+    private PropertyMapper propertyMapper;
 
     @Override
     public void add(Property property) {

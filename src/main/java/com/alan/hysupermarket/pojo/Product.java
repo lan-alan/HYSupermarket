@@ -19,7 +19,6 @@ public class Product {
 
     private String CREATEDATE;
 
-
     /*非数据库字段*/
     private Category category;
 

@@ -50,7 +50,7 @@
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from HY_PRODUCT
+    from PRODUCT
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -61,15 +61,15 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from HY_PRODUCT
+    from PRODUCT
     where ID = #{ID,jdbcType=DECIMAL}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from HY_PRODUCT
+    delete from PRODUCT
     where ID = #{ID,jdbcType=DECIMAL}
   </delete>
   <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Product" useGeneratedKeys="true">
-    insert into HY_PRODUCT (NAME, SUBTITLE, ORIGNALPRICE, 
+    insert into PRODUCT (NAME, SUBTITLE, ORIGNALPRICE, 
       PROMOTEPRICE, STOCK, CID, 
       CREATEDATE)
     values (#{NAME,jdbcType=VARCHAR}, #{SUBTITLE,jdbcType=VARCHAR}, #{ORIGNALPRICE,jdbcType=FLOAT}, 
@@ -77,7 +77,7 @@
       #{CREATEDATE,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Product" useGeneratedKeys="true">
-    insert into HY_PRODUCT
+    insert into PRODUCT
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="NAME != null">
         NAME,
@@ -126,7 +126,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.Product">
-    update HY_PRODUCT
+    update PRODUCT
     <set>
       <if test="NAME != null">
         NAME = #{NAME,jdbcType=VARCHAR},
@@ -153,7 +153,7 @@
     where ID = #{ID,jdbcType=DECIMAL}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.Product">
-    update HY_PRODUCT
+    update PRODUCT
     set NAME = #{NAME,jdbcType=VARCHAR},
       SUBTITLE = #{SUBTITLE,jdbcType=VARCHAR},
       ORIGNALPRICE = #{ORIGNALPRICE,jdbcType=FLOAT},

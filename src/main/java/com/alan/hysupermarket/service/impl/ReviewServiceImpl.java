@@ -1,11 +1,11 @@
 package com.alan.hysupermarket.service.impl;
 
-import com.alan.hysupermarket.mapper.IReviewMapper;
+import com.alan.hysupermarket.mapper.ReviewMapper;
 import com.alan.hysupermarket.pojo.Review;
 import com.alan.hysupermarket.pojo.ReviewExample;
-import com.alan.hysupermarket.pojo.User;
+import com.alan.hysupermarket.pojo.Users;
 import com.alan.hysupermarket.service.IReviewService;
-import com.alan.hysupermarket.service.IUserService;
+import com.alan.hysupermarket.service.IUsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +15,10 @@ import java.util.List;
 public class ReviewServiceImpl implements IReviewService {
 
     @Autowired
-    private IReviewMapper reviewMapper;
+    private ReviewMapper reviewMapper;
 
     @Autowired
-    private IUserService userService;
+    private IUsersService usersService;
 
     @Override
     public void add(Review review) {
@@ -57,9 +57,9 @@ public class ReviewServiceImpl implements IReviewService {
     }
 
     private void setUser(Review review) {
-        long uid = review.getU_ID();
-        User user = userService.get(uid);
-        review.setUser(user);
+        long uid = review.getUUID();
+        Users user = usersService.get(uid);
+        review.setUsers(user);
     }
 
     @Override

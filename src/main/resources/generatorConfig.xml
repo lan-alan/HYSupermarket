@@ -43,7 +43,7 @@
         </javaClientGenerator>
 
         <!--生成对应表及类名-->
-        <table tableName="hy_category" domainObjectName="Category" enableCountByExample="false"
+        <table tableName="category" domainObjectName="Category" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
@@ -51,7 +51,7 @@
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
-        <table tableName="hy_property" domainObjectName="Property" enableCountByExample="false"
+        <table tableName="property" domainObjectName="Property" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
@@ -60,7 +60,7 @@
         </table>
 
 
-        <table tableName="hy_product" domainObjectName="Product" enableCountByExample="false"
+        <table tableName="product" domainObjectName="Product" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
@@ -68,7 +68,7 @@
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
-        <table tableName="hy_productImage" domainObjectName="ProductImage" enableCountByExample="false"
+        <table tableName="productImage" domainObjectName="ProductImage" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
@@ -76,14 +76,14 @@
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
-        <table tableName="hy_order_" domainObjectName="Order" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="orders" domainObjectName="Orders" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
-        <table tableName="hy_propertyValue" domainObjectName="PropertyValue" enableCountByExample="false"
+        <table tableName="propertyValue" domainObjectName="PropertyValue" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
@@ -91,7 +91,7 @@
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
-        <table tableName="hy_review" domainObjectName="Review" enableCountByExample="false"
+        <table tableName="review" domainObjectName="Review" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
@@ -99,14 +99,14 @@
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
-        <table tableName="hy_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="users" domainObjectName="Users" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
-        <table tableName="hy_orderItem" domainObjectName="OrderItem" enableCountByExample="false"
+        <table tableName="ordersItem" domainObjectName="OrdersItem" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>

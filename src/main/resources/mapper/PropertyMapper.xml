@@ -45,7 +45,7 @@
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from HY_PROPERTY
+    from PROPERTY
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -56,19 +56,19 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from HY_PROPERTY
+    from PROPERTY
     where ID = #{ID,jdbcType=DECIMAL}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from HY_PROPERTY
+    delete from PROPERTY
     where ID = #{ID,jdbcType=DECIMAL}
   </delete>
   <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Property" useGeneratedKeys="true">
-    insert into HY_PROPERTY (CID, NAME)
+    insert into PROPERTY (CID, NAME)
     values (#{CID,jdbcType=DECIMAL}, #{NAME,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.Property" useGeneratedKeys="true">
-    insert into HY_PROPERTY
+    insert into PROPERTY
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="CID != null">
         CID,
@@ -87,7 +87,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.Property">
-    update HY_PROPERTY
+    update PROPERTY
     <set>
       <if test="CID != null">
         CID = #{CID,jdbcType=DECIMAL},
@@ -99,7 +99,7 @@
     where ID = #{ID,jdbcType=DECIMAL}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.Property">
-    update HY_PROPERTY
+    update PROPERTY
     set CID = #{CID,jdbcType=DECIMAL},
       NAME = #{NAME,jdbcType=VARCHAR}
     where ID = #{ID,jdbcType=DECIMAL}
