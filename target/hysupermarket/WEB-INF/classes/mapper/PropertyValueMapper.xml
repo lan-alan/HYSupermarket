@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alan.hysupermarket.mapper.PropertyValueMapper">
+  <resultMap id="BaseResultMap" type="com.alan.hysupermarket.pojo.PropertyValue">
+    <id column="ID" jdbcType="DECIMAL" property="ID" />
+    <result column="PID" jdbcType="DECIMAL" property="PID" />
+    <result column="PTID" jdbcType="DECIMAL" property="PTID" />
+    <result column="VALUE" jdbcType="VARCHAR" property="VALUE" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, PID, PTID, VALUE
+  </sql>
+  <select id="selectByExample" parameterType="com.alan.hysupermarket.pojo.PropertyValueExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from PROPERTYVALUE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from PROPERTYVALUE
+    where ID = #{ID,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from PROPERTYVALUE
+    where ID = #{ID,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.PropertyValue" useGeneratedKeys="true">
+    insert into PROPERTYVALUE (PID, PTID, VALUE
+      )
+    values (#{PID,jdbcType=DECIMAL}, #{PTID,jdbcType=DECIMAL}, #{VALUE,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="ID" parameterType="com.alan.hysupermarket.pojo.PropertyValue" useGeneratedKeys="true">
+    insert into PROPERTYVALUE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="PID != null">
+        PID,
+      </if>
+      <if test="PTID != null">
+        PTID,
+      </if>
+      <if test="VALUE != null">
+        VALUE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="PID != null">
+        #{PID,jdbcType=DECIMAL},
+      </if>
+      <if test="PTID != null">
+        #{PTID,jdbcType=DECIMAL},
+      </if>
+      <if test="VALUE != null">
+        #{VALUE,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.alan.hysupermarket.pojo.PropertyValue">
+    update PROPERTYVALUE
+    <set>
+      <if test="PID != null">
+        PID = #{PID,jdbcType=DECIMAL},
+      </if>
+      <if test="PTID != null">
+        PTID = #{PTID,jdbcType=DECIMAL},
+      </if>
+      <if test="VALUE != null">
+        VALUE = #{VALUE,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{ID,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.alan.hysupermarket.pojo.PropertyValue">
+    update PROPERTYVALUE
+    set PID = #{PID,jdbcType=DECIMAL},
+      PTID = #{PTID,jdbcType=DECIMAL},
+      VALUE = #{VALUE,jdbcType=VARCHAR}
+    where ID = #{ID,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -19,21 +19,21 @@ import java.util.List;
 public class OrdersServiceImpl implements IOrdersService {
 
     @Autowired
-    private OrdersMapper OrdersMapper;
+    private OrdersMapper ordersMapper;
 
     @Autowired
     private IUsersService usersService;
 
     @Autowired
-    private IOrdersItemService OrdersItemService;
+    private IOrdersItemService ordersItemService;
 
     @Override
     public void add(Orders Orders) {
-        OrdersMapper.insert(Orders);
+        ordersMapper.insert(Orders);
     }
 
     @Override
-    @Transactional(propagation = Propagation.MANDATORY.REQUIRED, rollbackForClassName = "Exception")
+    @Transactional(propagation = Propagation.REQUIRED, rollbackForClassName = "Exception")
     public float add(Orders Orders, List<OrdersItem> ois) {
         float total = 0;
         add(Orders);
@@ -43,7 +43,7 @@ public class OrdersServiceImpl implements IOrdersService {
 
         for (OrdersItem oi : ois) {
             oi.setOID(Orders.getID());
-            //OrdersItemService.update(oi);
+            ordersItemService.update(oi);
 
         }
 
@@ -52,25 +52,25 @@ public class OrdersServiceImpl implements IOrdersService {
 
     @Override
     public void delete(long id) {
-        OrdersMapper.deleteByPrimaryKey(id);
+        ordersMapper.deleteByPrimaryKey(id);
     }
 
     @Override
     public void update(Orders Orders) {
-        OrdersMapper.updateByPrimaryKeySelective(Orders);
+        ordersMapper.updateByPrimaryKeySelective(Orders);
     }
 
     @Override
     public Orders get(long id) {
 
-        return OrdersMapper.selectByPrimaryKey(id);
+        return ordersMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public List<Orders> list() {
         OrdersExample example = new OrdersExample();
         example.setOrderByClause("id desc");
-        return OrdersMapper.selectByExample(example);
+        return ordersMapper.selectByExample(example);
     }
 
     @Override
@@ -78,7 +78,7 @@ public class OrdersServiceImpl implements IOrdersService {
         OrdersExample example = new OrdersExample();
         example.createCriteria().andUUIDEqualTo(uid).andSTATUSNotEqualTo(excludedStatus);
         example.setOrderByClause("id desc");
-        return OrdersMapper.selectByExample(example);
+        return ordersMapper.selectByExample(example);
     }
 
     public void setUser(List<Orders> os) {
