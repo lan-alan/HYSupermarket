@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00a2639b-fe14-47cd-a620-90f15f29ff2c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fore/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/fore/style.css" />
-    </list>
+    <list default="true" id="00a2639b-fe14-47cd-a620-90f15f29ff2c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -151,7 +148,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="303" />
     <option name="y" value="50" />
     <option name="width" value="1924" />
@@ -600,15 +597,15 @@
       <workItem from="1519390620819" duration="2567000" />
       <workItem from="1519549459231" duration="9817000" />
       <workItem from="1519560360069" duration="1115000" />
-      <workItem from="1519566317238" duration="423000" />
+      <workItem from="1519566317238" duration="494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70604000" />
+    <option name="totallyTimeSpent" value="70675000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
