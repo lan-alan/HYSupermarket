@@ -14,16 +14,17 @@
     <context:component-scan base-package="com.alan.hysupermarket.service"/>
 
     <!--导入数据库配置文件-->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:property-placeholder location="classpath:jdbcinfo.properties"/>
     <!--配置数据库连接池，阿里巴巴druid-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!--基本属性url、user、password-->
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
+        <property name="driverClassName" value="${oracle.driver}"/>
+        <property name="url" value="${oracle.url}"/>
+        <property name="username" value="${oracle.user}"/>
+        <property name="password" value="${oracle.password}"/>
 
         <!--配置初始化大小、最大、最小-->
-        <property name="initialSize" value="1"/>
+        <property name="initialSize" value="0"/>
         <property name="minIdle" value="1"/>
         <property name="maxActive" value="20"/>
 

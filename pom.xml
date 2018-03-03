@@ -36,12 +36,12 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        <!--配置服务-->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-        </dependency>
+        <!--&lt;!&ndash;配置服务&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>servlet-api</artifactId>-->
+            <!--<version>2.5</version>-->
+        <!--</dependency>-->
         <!--Oracle数据库架包-->
         <dependency>
             <groupId>com.oracle</groupId>
@@ -166,10 +166,16 @@
         </dependency>
 
         <dependency>
-        <groupId>org.mybatis.generator</groupId>
-        <artifactId>mybatis-generator-core</artifactId>
-        <version>${mybatis-generator.version}</version>
-    </dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>${mybatis-generator.version}</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.aspectj</groupId>-->
+            <!--<artifactId>aspectjweaver</artifactId>-->
+            <!--<version>1.8.4</version>-->
+        <!--</dependency>-->
 
     </dependencies>
     <build>
